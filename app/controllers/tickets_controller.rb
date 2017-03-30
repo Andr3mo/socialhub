@@ -4,18 +4,18 @@ class TicketsController < ApplicationController
   before_action :find_ticket, only: [:show, :edit, :update, :destroy]
   
   def index
-    @tickets = Ticket.all.order("name")
+    @tickets = Ticket.all.order('name')
   end
 
   def show
   end
 
   def new
-    @ticket = Ticket.new
+    @ticket = current_user.tickets.build
   end
 
   def create
-    @ticket = Ticket.new(ticket_params)
+    @ticket = current_user.tickets.build(ticket_params)
 
     if @ticket.save
       redirect_to @ticket

@@ -5,6 +5,10 @@
 %p= @ticket.stock_quantity
 %p= @ticket.status
 
+%p 
+  Seller 
+  = @ticket.user.email
+
 = link_to 'Edit', edit_ticket_path(@ticket)
 = link_to 'Delete', ticket_path(@ticket), method: :delete, data: { confirm: 'Are you sure?' }
 = link_to 'Home', root_path
