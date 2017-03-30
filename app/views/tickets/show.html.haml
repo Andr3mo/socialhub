@@ -1,0 +1,10 @@
+%h1= @ticket.name
+%p= @ticket.description
+%p= @ticket.code
+%p= @ticket.price
+%p= @ticket.stock_quantity
+%p= @ticket.status
+
+= link_to 'Edit', edit_ticket_path(@ticket)
+= link_to 'Delete', ticket_path(@ticket), method: :delete, data: { confirm: 'Are you sure?' }
+= link_to 'Home', root_path

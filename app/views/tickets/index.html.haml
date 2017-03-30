@@ -1,0 +1,5 @@
+- @tickets.each do |ticket|
+  %h2= link_to ticket.name, ticket
+  %p= 	ticket.description
+
+= link_to 'New Ticket', new_ticket_path
