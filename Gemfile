@@ -34,6 +34,15 @@ gem 'jbuilder', '~> 2.5'
 # Add the rubocop gem
 gem 'rubocop'
 
+# Add HAML for HTML Abstraction Markup Language
+gem 'haml', '~> 4.0', '>= 4.0.7'
+
+# Add simple_form to add forms easily
+gem 'simple_form', '~> 3.4'
+
+# Add devise for Flexible authentication solution
+gem 'devise', '~> 4.2', '>= 4.2.1'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
