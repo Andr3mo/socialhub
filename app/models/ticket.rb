@@ -1,5 +1,6 @@
 # rubocop:disable LineLength
 class Ticket < ApplicationRecord
+  searchkick
   validates :name, :image, :code, :price, :stock_quantity, presence: true
   belongs_to :user
 

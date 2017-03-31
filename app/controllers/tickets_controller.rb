@@ -4,6 +4,14 @@ class TicketsController < ApplicationController
   before_action :find_ticket, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
   
+  def search
+    if params[:search].present?
+      @tickets = Ticket.search(params[:search])
+    else
+      @tickets = Ticket.all      
+    end
+  end
+
   def index
     @tickets = Ticket.all.order('name')
   end

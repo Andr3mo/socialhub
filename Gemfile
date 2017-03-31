@@ -49,6 +49,9 @@ gem 'devise', '~> 4.2', '>= 4.2.1'
 # Add paperclip to image upload
 gem "paperclip", "~> 5.0.0"
 
+# Add searchkick to search for tickets
+gem 'searchkick', '~> 2.2'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

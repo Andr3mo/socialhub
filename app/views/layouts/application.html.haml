@@ -16,6 +16,11 @@
       - else
         = link_to 'Sign Up', new_user_registration_path
         = link_to 'Sing In', new_user_session_path
+
+    =simple_form_for :search, url: search_path(:search), :method => :get  do |f|
+      =f.input :q, label: 'Search'
+      =f.submit "Search"
+
   .wrapper
     %p.notice= notice
     %p.alert= alert
