@@ -1,0 +1,24 @@
+!!!
+%html
+%head
+  %title Social Hub
+  = csrf_meta_tags
+  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+  = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+%body
+  %header
+    #logo
+      %p Social Hub
+    #buttons
+      = link_to 'Home', root_path
+      - if user_signed_in?
+        = link_to 'New Ticket', new_ticket_path
+      - else
+        = link_to 'Sign Up', new_user_registration_path
+        = link_to 'Sing In', new_user_session_path
+  .wrapper
+    %p.notice= notice
+    %p.alert= alert
+
+  .wrapper
+    = yield

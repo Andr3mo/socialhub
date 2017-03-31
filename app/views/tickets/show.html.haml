@@ -8,7 +8,6 @@
 %p 
   Seller 
   = @ticket.user.email
-
-= link_to 'Edit', edit_ticket_path(@ticket)
-= link_to 'Delete', ticket_path(@ticket), method: :delete, data: { confirm: 'Are you sure?' }
-= link_to 'Home', root_path
+- if current_user != NIL && current_user.id == @ticket.user.id
+  = link_to 'Edit', edit_ticket_path(@ticket)
+  = link_to 'Delete', ticket_path(@ticket), method: :delete, data: { confirm: 'Are you sure?' }
