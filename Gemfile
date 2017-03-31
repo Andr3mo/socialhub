@@ -46,6 +46,9 @@ gem 'devise', '~> 4.2', '>= 4.2.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Add paperclip to image upload
+gem "paperclip", "~> 5.0.0"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
