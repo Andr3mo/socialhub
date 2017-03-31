@@ -1,6 +1,7 @@
-= simple_form_for @ticket do |f|
+= simple_form_for @ticket, html: { multipart: true } do |f|
   = f.input 	:name
   = f.input 	:description, as: :text
+  = f.input 	:image, as: :file
   = f.input   	:code
   = f.input  	:price
   = f.input  	:stock_quantity

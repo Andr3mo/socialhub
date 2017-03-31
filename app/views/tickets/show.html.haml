@@ -1,5 +1,6 @@
 %h1= @ticket.name
 %p= @ticket.description
+= image_tag @ticket.image.url(:medium)
 %p= @ticket.code
 %p= @ticket.price
 %p= @ticket.stock_quantity
