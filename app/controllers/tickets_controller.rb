@@ -21,6 +21,7 @@ class TicketsController < ApplicationController
 
   def new
     @ticket = current_user.tickets.build
+    @categories = Category.all
   end
 
   def create
@@ -34,6 +35,7 @@ class TicketsController < ApplicationController
   end
 
   def edit
+    @categories = Category.all
   end
 
   def update
