@@ -1,4 +1,8 @@
 %h1= @ticket.name
+- if @ticket.category.present?
+  %p= @ticket.category.name
+- else
+  %p no category
 %p= @ticket.description
 = image_tag @ticket.image.url(:medium)
 %p= @ticket.code
