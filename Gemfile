@@ -52,6 +52,9 @@ gem "paperclip", "~> 5.0.0"
 # Add searchkick to search for tickets
 gem 'searchkick', '~> 2.2'
 
+# Added the gem to list the countries
+gem 'country_select'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
