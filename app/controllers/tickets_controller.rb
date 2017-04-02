@@ -2,7 +2,7 @@
 class TicketsController < ApplicationController
   
   before_action :find_ticket, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :search]
   
   def search
     if params[:search].present?
