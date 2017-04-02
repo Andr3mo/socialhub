@@ -2,7 +2,7 @@
 %p= @ticket.description
 = image_tag @ticket.image.url(:medium)
 %p= @ticket.code
-%p= @ticket.price
+%p= number_to_currency(@ticket.price)
 %p= @ticket.stock_quantity
 %p= @ticket.status
 

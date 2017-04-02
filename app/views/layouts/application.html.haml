@@ -6,24 +6,28 @@
   = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
   = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 %body
-  %header
-    #logo
-      %p Social Hub
-    #buttons
-      = link_to 'Home', root_path
-      - if user_signed_in?
-        = link_to 'New Ticket', new_ticket_path
-      - else
-        = link_to 'Sign Up', new_user_registration_path
-        = link_to 'Sing In', new_user_session_path
+  %div.container
+    %header
+      #logo
+        %p Social Hub
+      %div.row
+        %div.col-md-6
+          #buttons
+            = link_to 'Home', root_path
+            - if user_signed_in?
+              = link_to 'New Ticket', new_ticket_path
+            - else
+              = link_to 'Sign Up', new_user_registration_path
+              = link_to 'Sing In', new_user_session_path
 
-    =simple_form_for :search, url: search_path(:search), :method => :get  do |f|
-      =f.input :q, label: 'Search'
-      =f.submit "Search"
+        %div.col-md-6
+          =simple_form_for :search, html: { class: 'form-inline' }, url: search_path(:search), :method => :get  do |f|
+            =f.input :q, label: false, required: false, placeholder: 'Search'
+            =f.submit "Search"
 
-  .wrapper
+  %div.container
     %p.notice= notice
     %p.alert= alert
 
-  .wrapper
+  %div.container
     = yield
