@@ -1,0 +1,10 @@
+%h1= full_name
+%p= @user.email
+%p= @user.address
+%p= @user.city
+%p= @user.country
+%p= @user.postal_code
+
+- @user_tickets.each do |ticket|
+  %h2= link_to ticket.name, ticket
+  %p= 	ticket.description
