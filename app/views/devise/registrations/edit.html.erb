@@ -8,7 +8,8 @@
     <%= f.input :last_name, required: true, autofocus: true %>
     <%= f.input :address, required: true, autofocus: true %>
     <%= f.input :city, required: true, autofocus: true %>
-    <%= f.input :country, required: true, autofocus: true %>
+    <%= f.label :country, "Country" %>
+    <%= f.country_select :country, only: ["CA","US"] %>
     <%= f.input :postal_code, required: true, autofocus: true %>
     <%= f.input :email, required: true, autofocus: true %>
 
