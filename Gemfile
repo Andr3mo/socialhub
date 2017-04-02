@@ -55,6 +55,10 @@ gem 'searchkick', '~> 2.2'
 # Added the gem to list the countries
 gem 'country_select'
 
+# Added gems for activeadmin
+gem 'inherited_resources', git: 'https://github.com/activeadmin/inherited_resources'
+gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
