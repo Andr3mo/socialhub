@@ -6,6 +6,7 @@
   <div class="form-inputs">
     <%= f.input :first_name, required: true, autofocus: true %>
     <%= f.input :last_name, required: true, autofocus: true %>
+    <%= f.input :province_id, collection: @provinces, label_method: :name, value_method: :id,label: "Province", include_blank: false, selected: @user.province_id %>
     <%= f.input :address, required: true, autofocus: true %>
     <%= f.input :city, required: true, autofocus: true %>
     <%= f.label :country, "Country" %>
