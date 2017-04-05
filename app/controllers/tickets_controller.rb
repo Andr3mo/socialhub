@@ -6,14 +6,14 @@ class TicketsController < ApplicationController
   
   def search
     if params[:search].present?
-      @tickets = Ticket.search(params[:search])
+      @tickets = Ticket.search(params[:search]).page(params[:page]).per(5)
     else
-      @tickets = Ticket.all      
+      @tickets = Ticket.all.page(params[:page]).per(5)
     end
   end
 
   def index
-    @tickets = Ticket.all.order('name')
+    @tickets = Ticket.all.order('name').page(params[:page]).per(5)
   end
 
   def show
