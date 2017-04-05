@@ -62,6 +62,9 @@ gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin'
 # Adding bootstrap
 gem 'bootstrap-sass', '~> 3.3.6'
 
+# Adding pagination with kaminari
+gem 'kaminari'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
