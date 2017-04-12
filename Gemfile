@@ -45,7 +45,7 @@ gem 'devise', '~> 4.2', '>= 4.2.1'
 # gem 'capistrano-rails', group: :development
 
 # Add paperclip to image upload
-gem "paperclip", "~> 5.0.0"
+gem 'paperclip', '~> 5.0.0'
 
 # Add searchkick to search for tickets
 gem 'searchkick', '~> 2.2'
@@ -54,8 +54,8 @@ gem 'searchkick', '~> 2.2'
 gem 'country_select'
 
 # Added gems for activeadmin
-gem 'inherited_resources', git: 'https://github.com/activeadmin/inherited_resources'
 gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin'
+gem 'inherited_resources', git: 'https://github.com/activeadmin/inherited_resources'
 
 # Adding bootstrap
 gem 'bootstrap-sass', '~> 3.3.6'
@@ -90,4 +90,4 @@ group :production do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i(mingw mswin x64_mingw jruby)

@@ -1,23 +1,21 @@
 # rubocop:disable LineLength
 class TicketsController < ApplicationController
-  
-  before_action :find_ticket, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show, :search]
-  
+  before_action :find_ticket, only: %i(show edit update destroy)
+  before_action :authenticate_user!, except: %i(index show search)
+
   def search
-    if params[:search].present?
-      @tickets = Ticket.search(params[:search])
-    else
-      @tickets = Ticket.all
-    end
+    @tickets = if params[:search].present?
+                 Ticket.search(params[:search])
+               else
+                 Ticket.all
+               end
   end
 
   def index
     @tickets = Ticket.all.order('name').page(params[:page]).per(5)
   end
 
-  def show
-  end
+  def show() end
 
   def new
     @ticket = current_user.tickets.build
