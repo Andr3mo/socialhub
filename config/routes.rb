@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :tickets
   resources :users
+  resources :searches
 
   get '/tickets/search/:q', to: 'tickets#search', as: :search
 
