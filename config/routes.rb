@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :users
   resources :searches
 
-  get '/tickets/search/:q', to: 'tickets#search', as: :search
+  get '/tickets/search/:q', to: 'tickets#search', as: :simple_search
 
   root 'tickets#index'
 end

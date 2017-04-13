@@ -4,8 +4,8 @@ class TicketsController < ApplicationController
   before_action :authenticate_user!, except: %i(index show search)
 
   def search
-    @tickets = if params[:search].present?
-                 Ticket.search(params[:search])
+    @tickets = if params[:simple_search].present?
+                 Ticket.search(params[:simple_search])
                else
                  Ticket.all
                end

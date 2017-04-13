@@ -1,0 +1,8 @@
+%div.row
+  %div.col-md-6
+    = simple_form_for @search, html: { class: 'form-horizontal'} do |f|
+      = f.input 	:keywords
+      = f.input   :category, collection: @categories, label_method: :name, value_method: :id, include_blank: true
+      = f.input  	:min_price
+      = f.input  	:max_price
+      = f.submit

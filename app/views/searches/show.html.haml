@@ -1,0 +1,7 @@
+%h1 Search Result
+- if @search.search_tickets.empty?
+  %p No tickets found
+- else
+  - @search.search_tickets.each do |ticket|
+    %h2= link_to ticket.name, ticket
+    %p= ticket.description
