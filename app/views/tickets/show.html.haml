@@ -1,18 +1,20 @@
-%h1= @ticket.name
-- if @ticket.category.present?
-  %p= @ticket.category.name
-- else
-  %p no category
-%p= @ticket.description
-= image_tag @ticket.image.url(:medium)
-%p= @ticket.code
-%p= number_to_currency(@ticket.price)
-%p= @ticket.stock_quantity
-%p= @ticket.status
-
-%p 
-  Seller 
-  = @ticket.user.email
-- if current_user != NIL && current_user.id == @ticket.user.id
-  = link_to 'Edit', edit_ticket_path(@ticket)
-  = link_to 'Delete', ticket_path(@ticket), method: :delete, data: { confirm: 'Are you sure?' }
+%article.row
+  %div.md-col-4
+    %h1= @ticket.name
+    - if @ticket.category.present?
+      %p= @ticket.category.name
+    - else
+      %p no category
+    %p= @ticket.description
+    = image_tag @ticket.image.url(:medium)
+    %p= @ticket.code
+    %p= number_to_currency(@ticket.price)
+    %p= @ticket.stock_quantity
+    %p= @ticket.status
+    
+    %p 
+      Seller 
+      = @ticket.user.email
+    - if current_user != NIL && current_user.id == @ticket.user.id
+      = link_to 'Edit', edit_ticket_path(@ticket)
+      = link_to 'Delete', ticket_path(@ticket), method: :delete, data: { confirm: 'Are you sure?' }

@@ -1,5 +1,8 @@
-- @tickets.each do |ticket|
-  %h2= link_to ticket.name, ticket
-  %p= 	ticket.description
+%div.row
+  - @tickets.each do |ticket|
+    %div.col-md-4
+      %h2= link_to ticket.name, ticket
+      %p= 	ticket.description
   
-= paginate @tickets
+  %div.col-md-12  
+    = paginate @tickets

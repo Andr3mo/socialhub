@@ -1,4 +1,17 @@
+@import 'variables';
+
+* {
+	box-sizing: border-box;
+}
+
 
 body {
-	background: #FFF;
+	background: $primary-color;
+	font-family: $font-family;
+}
+
+.simple_search_q input{
+	&:focus{
+            	box-shadow: 0 0 0 4000px rgba(0,0,0, .5);
+            }
 }
